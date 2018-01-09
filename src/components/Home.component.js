@@ -6,7 +6,7 @@ export default (props) => (
     <ListGroup>
       {
         props.data.map((data) => 
-          <ListGroupItem tag={Link} key={`${data.id}${data.login}`} to={`abc/${data.login}`}><img src={data.avatar_url} height={50} width={50} /> {data.login}</ListGroupItem>
+          <ListGroupItem tag={Link} key={`${data.id}${data.login}`} to={`user/${data.login}`}><img src={data.avatar_url} height={50} width={50} /> {data.login}</ListGroupItem>
         )
       }
     </ListGroup>
