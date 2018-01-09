@@ -1,24 +1,79 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import {withId} from '../Redux/withId'
+import {withData} from '../Redux/withData'
 
-import { Container,Card,Button, CardTitle, CardText } from 'reactstrap';
+import { Container,Card, CardImg, CardText, CardBody, CardLink,
+    CardTitle, Button, Row, Col } from 'reactstrap';
  class Header extends React.Component {
-     componentDidMount() {
-         this.props.updateId(this.props.match.params.id)
+     constructor(props) {
+         super(props);
+        
+         console.log('in real constructo',props,this.props)
+
+        const {login} = this.props.match.params;
+        const data = this.props.data.filter(data => data.login == login);
+         this.state = {data: data.length>0?data[0]:''};
+     }
+     componentDidMount() {debugger;
+       if(this.state.data === '') {
+        const me = this;
+        const {login} = this.props.match.params;
+        fetch(`https://api.github.com/users/${login}`)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          me.setState({data});
+        })
+        .catch(function(error) {
+          console.log('Request failed', error)
+        });
+       }
      }
     render() {
-        const {id} = this.props.match.params;
-
+        console.log('stateeeeeeeee', this.state);
+        const {login} = this.props.match.params;
+        const abc = this.state;
+        if(this.state.data === ''){
+            return( <img src="../loading.gif" style={ { display: 'block',marginLeft: 'auto',marginRight: 'auto'}} />);
+        }
         return (
             <Container>
-                <Card body>
-                <CardTitle>Special Title Treatment no .{id}</CardTitle>
-                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+               <Card>
+                    <CardBody>
+                    <CardTitle>User details</CardTitle>
+                    </CardBody>
+                    <img width="300" height="300" src={this.state.data.avatar_url} alt="Card image cap" />
+                    <CardBody>
+                        <Row>
+                            <Col md={2}>
+                            id:
+                            </Col>
+                            <Col >
+                            {this.state.data.id}
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={2}>
+                            Login:
+                            </Col>
+                            <Col >
+                            {this.state.data.login}
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={2}>
+                            html Url:
+                            </Col>
+                            <Col >
+                            <a href={this.state.data.html_url}>{this.state.data.html_url}</a>
+                            </Col>
+                        </Row>
+                    </CardBody>
+                </Card>
                 <Link to="/"><Button>Go Back</Button></Link>
-              </Card>
             </Container>
         );
     }
 }
-export default withId(Header)
+export default withData(Header)

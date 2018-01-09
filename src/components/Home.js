@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { ListGroup, ListGroupItem,Container } from 'reactstrap';
-import {withId} from '../Redux/withId'
+import {withData} from '../Redux/withData'
 
  class Example extends React.Component {
    constructor(props) {
@@ -16,16 +16,15 @@ import {withId} from '../Redux/withId'
     .then(function(response) {
       return response.json();
     })
-    .then(function(text) {
+    .then(function(data) {
       me.setState({loading:false});
-      console.log('Request successful', text);
+      me.props.updateData(data)
     })
     .catch(function(error) {
       console.log('Request failed', error)
     });
    }
   render() {
-      console.log(this.props);
       if (this.state.loading) {
        return( <img src="loading.gif" style={ { display: 'block',marginLeft: 'auto',marginRight: 'auto'}} />);
       }
@@ -33,15 +32,15 @@ import {withId} from '../Redux/withId'
 
         <Container>
       <ListGroup>
-        <ListGroupItem tag={Link} to="abc/1">Cras justo odio</ListGroupItem>
-        <ListGroupItem tag={Link} to="abc/2">Dapibus ac facilisis in</ListGroupItem>
-        <ListGroupItem tag={Link} to="abc/3">Morbi leo risus</ListGroupItem>
-        <ListGroupItem tag={Link} to="abc/4">Porta ac consectetur ac</ListGroupItem>
-        <ListGroupItem tag={Link} to="abc/5">Vestibulum at eros</ListGroupItem>
+        {
+          this.props.data.map((data) => 
+            <ListGroupItem tag={Link} key={`${data.id}${data.login}`} to={`abc/${data.login}`}><img src={data.avatar_url} height={50} width={50} /> {data.login}</ListGroupItem>
+          )
+        }
       </ListGroup>
 
       </Container>
     );
   }
 }
-export default withId(Example)
+export default withData(Example)

@@ -1,3 +1,3 @@
-export function updateId(id) {
-	return { type: 'UPDATE_ID', id};
+export function updateData(data) {
+	return { type: 'UPDATE_DATA', data};
 }

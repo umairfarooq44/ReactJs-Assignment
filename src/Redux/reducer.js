@@ -1,10 +1,11 @@
-export default (state = {id:0}, action) => {
+export default (state = {data:[]}, action) => {
 	switch (action.type) {
-		case 'UPDATE_ID': {
-			const {id } = action;
-			return {
-				id
-			};
+		case 'UPDATE_DATA': {
+			const {data } = action;
+			return {data:[
+				...data,
+				...state
+			]};
 		}
 		default:
 			return state;
