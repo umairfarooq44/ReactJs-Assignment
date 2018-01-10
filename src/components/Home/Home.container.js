@@ -10,21 +10,22 @@ import HomeComponent from './Home.component';
      this.loadMore = this.loadMore.bind(this)
    }
    componentDidMount() {
-    if (!(this.props.data.length>0)) {
+    if (!(this.props.user.data.length>0)) {
       this.props.fetchData(0)
     }
    }
    loadMore() {
-     const lastId = this.props.data[this.props.data.length -1 ].id;
+     const lastId = this.props.user.data[this.props.user.data.length -1 ].id;
     this.props.fetchData(lastId)
    }
   render() {
-      if (!(this.props.data.length>0)) {
+    const {user} =this.props
+      if (!(user.data.length>0)) {
        return( <img src="loading.gif" style={ { display: 'block',marginLeft: 'auto',marginRight: 'auto'}} />);
       }
     return (
 
-      <HomeComponent data={this.props.data} onLoadMore={this.loadMore} />
+      <HomeComponent data={user.data} onLoadMore={this.loadMore} isLoading={user.isFetching} />
     );
   }
 }

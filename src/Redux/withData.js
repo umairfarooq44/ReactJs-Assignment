@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchData } from './actions';
 
 const mapStateToProps = state => ({
-	data: state.data
+	user: state
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

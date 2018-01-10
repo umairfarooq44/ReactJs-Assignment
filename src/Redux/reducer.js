@@ -1,14 +1,15 @@
-import { log } from "util";
+import {FETCH_DATA_FULFILLED, FETCH_DATA_PENDING, FETCH_DATA_REJECTED} from './constants'
+const initialState = {data:[], isFetching:false, error:false};
 
-export default (state = {data:[]}, action) => {
+export default (state = initialState, action) => {
 	switch (action.type) {
-		case 'FETCH_DATA_PENDING':{
+		case FETCH_DATA_PENDING:{
 			return {
 				...state,
 				isFetching: true
 			}
 		}
-		case 'FETCH_DATA_FULFILLED':{
+		case FETCH_DATA_FULFILLED:{
 			return {
 				...state,
 				isFetching: false,
@@ -16,7 +17,7 @@ export default (state = {data:[]}, action) => {
 				data: state.data.concat(action.payload)
 			}
 		}
-		case 'FETCH_DATA_REJECTED':{
+		case FETCH_DATA_REJECTED:{
 			return {
 				...state,
 				isFetching: false,

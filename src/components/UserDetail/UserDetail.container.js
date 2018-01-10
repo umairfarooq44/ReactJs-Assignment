@@ -8,7 +8,7 @@ import UserDetailComponent from './UserDetail.component';
         
 
         const {login} = this.props.match.params;
-        const data = this.props.data.filter(data => data.login == login);
+        const data = this.props.user.data.filter(data => data.login == login);
          this.state = {data: data.length>0?data[0]:''};
      }
      componentDidMount() {
