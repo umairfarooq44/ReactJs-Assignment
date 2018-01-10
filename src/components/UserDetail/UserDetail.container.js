@@ -1,14 +1,15 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import {withData} from '../../Redux/withData'
 
 import UserDetailComponent from './UserDetail.component';
- class Header extends React.Component {
+ class UserDetailContainer extends React.Component {
      constructor(props) {
          super(props);
         
 
         const {login} = this.props.match.params;
-        const data = this.props.user.data.filter(data => data.login == login);
+        const data = this.props.user.data.filter(data => data.login === login);
          this.state = {data: data.length>0?data[0]:''};
      }
      componentDidMount() {
@@ -28,7 +29,6 @@ import UserDetailComponent from './UserDetail.component';
        }
      }
     render() {
-        const {login} = this.props.match.params;
         if(this.state.data === ''){
             return( <img src="../loading.gif" style={ { display: 'block',marginLeft: 'auto',marginRight: 'auto'}} />);
         }
@@ -42,4 +42,8 @@ import UserDetailComponent from './UserDetail.component';
         );
     }
 }
-export default withData(Header)
+UserDetailContainer.propTypes = {
+    user: PropTypes.object,
+    match: PropTypes.object
+  }
+export default withData(UserDetailContainer)

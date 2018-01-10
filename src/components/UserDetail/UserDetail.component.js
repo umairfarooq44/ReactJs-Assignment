@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
-import { Container,Card, CardImg, CardText, CardBody, CardLink,
+import { Container,Card, CardBody,
     CardTitle, Button, Row, Col } from 'reactstrap';
-export default ({avatar_url, id, login, html_url}) =>(
+const UserDetailComponent = ({avatar_url, id, login, html_url}) =>(
     <Container>
                <Card>
                     <CardBody>
@@ -28,7 +29,7 @@ export default ({avatar_url, id, login, html_url}) =>(
                             </Col>
                         </Row>
                         <Row>
-                            <Col md={2}>
+                            <Col md={2}>HomeComponent
                             html Url:
                             </Col>
                             <Col >
@@ -39,4 +40,11 @@ export default ({avatar_url, id, login, html_url}) =>(
                 </Card>
                 <Link to="/"><Button>Go Back</Button></Link>
             </Container>
-)
+);
+UserDetailComponent.propTypes = {
+    avatar_url:PropTypes.string,
+    login:PropTypes.string,
+    html_url:PropTypes.string,
+    id:PropTypes.number,
+}
+export default UserDetailComponent;

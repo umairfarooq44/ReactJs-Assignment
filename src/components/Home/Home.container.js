@@ -1,10 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import { ListGroup, ListGroupItem,Container } from 'reactstrap';
+import PropTypes from 'prop-types'
 import {withData} from '../../Redux/withData'
 import HomeComponent from './Home.component';
 
- class Example extends React.Component {
+ class HomeContainer extends React.Component {
    constructor(props) {
      super(props);
      this.loadMore = this.loadMore.bind(this)
@@ -29,4 +28,8 @@ import HomeComponent from './Home.component';
     );
   }
 }
-export default withData(Example)
+HomeContainer.propTypes = {
+  fetchData: PropTypes.func,
+  user: PropTypes.object
+}
+export default withData(HomeContainer)

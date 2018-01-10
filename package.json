@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --hot --history-api-fallback",
     "test": "jest",
+    "lint": "eslint .",
     "build": "webpack -d && cp index.html dist/index.html && webpack-dev-server --content-base src/ --inline",
     "build:prod": "cp src/index.html dist/index.html && webpack -p"
   },
@@ -28,6 +29,7 @@
     "redux-promise-middleware": "^5.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.1",
     "babel-loader": "^6.2.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.9.0",
@@ -36,9 +38,13 @@
     "css-loader": "^0.28.8",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-react": "^7.5.1",
     "jest": "^22.0.5",
     "jest-cli": "^22.0.5",
     "node-sass": "^4.7.2",
+    "prop-types": "^15.6.0",
     "react-test-renderer": "^16.2.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-testkit": "^1.0.6",

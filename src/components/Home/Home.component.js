@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { ListGroup, ListGroupItem,Container ,Button } from 'reactstrap';
-export default (props) => (
+const HomeComponent = (props) => (
     <Container>
     <ListGroup>
       {
@@ -15,3 +16,9 @@ export default (props) => (
     }
     </Container>
 )
+HomeComponent.propTypes ={
+  data: PropTypes.array,
+  isLoading:PropTypes.bool,
+  onLoadMore:PropTypes.func
+}
+export default HomeComponent;

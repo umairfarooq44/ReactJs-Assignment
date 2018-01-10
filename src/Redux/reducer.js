@@ -13,7 +13,6 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				isFetching: false,
-				// data: action.payload
 				data: state.data.concat(action.payload)
 			}
 		}
