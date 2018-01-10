@@ -1,5 +1,5 @@
 import React from "react";
-import {withData} from '../Redux/withData'
+import {withData} from '../../Redux/withData'
 
 import UserDetailComponent from './UserDetail.component';
  class Header extends React.Component {

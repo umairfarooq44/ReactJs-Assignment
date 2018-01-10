@@ -7,8 +7,8 @@ import { Container, Row, Col } from 'reactstrap';
 import promiseMiddleware from 'redux-promise-middleware';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import 'bootstrap/dist/css/bootstrap.css';
-import DetailPage from "./components/UserDetail.container";
-import  Home  from "./components/Home.container"
+import DetailPage from "./components/UserDetail";
+import  Home  from "./components/Home"
 import  reducer  from "./Redux/reducer"
 
 let store = createStore(reducer,  composeWithDevTools(

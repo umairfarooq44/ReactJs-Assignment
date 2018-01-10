@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { ListGroup, ListGroupItem,Container } from 'reactstrap';
-import {withData} from '../Redux/withData'
+import {withData} from '../../Redux/withData'
 import HomeComponent from './Home.component';
 
  class Example extends React.Component {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --history-api-fallback",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack -d && cp index.html dist/index.html && webpack-dev-server --content-base src/ --inline",
     "build:prod": "cp src/index.html dist/index.html && webpack -p"
   },
@@ -14,6 +14,9 @@
   ],
   "author": "Umair Farooq",
   "license": "MIT",
+  "jest": {
+    "testRegex": "\\.test\\.js$"
+  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "bootstrap": "^4.0.0-beta.3",
@@ -31,6 +34,8 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.11.0",
     "css-loader": "^0.28.8",
+    "jest": "^22.0.5",
+    "jest-cli": "^22.0.5",
     "node-sass": "^4.7.2",
     "redux-devtools-extension": "^2.13.2",
     "sass-loader": "^6.0.6",
