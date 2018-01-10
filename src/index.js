@@ -7,7 +7,6 @@ import { Container, Row, Col } from 'reactstrap';
 import promiseMiddleware from 'redux-promise-middleware';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import 'bootstrap/dist/css/bootstrap.css';
-// import thunkMiddleware from 'redux-thunk';
 import DetailPage from "./components/UserDetail.container";
 import  Home  from "./components/Home.container"
 import  reducer  from "./Redux/reducer"

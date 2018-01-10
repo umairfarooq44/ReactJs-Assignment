@@ -5,7 +5,6 @@ export default (state = {data:[]}, action) => {
 		case 'FETCH_DATA_PENDING':{
 			return {
 				...state,
-				data: [],
 				isFetching: true
 			}
 		}
@@ -13,7 +12,8 @@ export default (state = {data:[]}, action) => {
 			return {
 				...state,
 				isFetching: false,
-				data: action.payload
+				// data: action.payload
+				data: state.data.concat(action.payload)
 			}
 		}
 		case 'FETCH_DATA_REJECTED':{

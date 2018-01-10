@@ -7,11 +7,16 @@ import HomeComponent from './Home.component';
  class Example extends React.Component {
    constructor(props) {
      super(props);
+     this.loadMore = this.loadMore.bind(this)
    }
    componentDidMount() {
     if (!(this.props.data.length>0)) {
-      this.props.fetchData()
+      this.props.fetchData(0)
     }
+   }
+   loadMore() {
+     const lastId = this.props.data[this.props.data.length -1 ].id;
+    this.props.fetchData(lastId)
    }
   render() {console.log('propss in home', this.props.data)
       if (!(this.props.data.length>0)) {
@@ -19,7 +24,7 @@ import HomeComponent from './Home.component';
       }
     return (
 
-      <HomeComponent data={this.props.data} />
+      <HomeComponent data={this.props.data} onLoadMore={this.loadMore} />
     );
   }
 }

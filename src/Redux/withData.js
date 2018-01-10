@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-	fetchData: (data) => dispatch(fetchData(data))
+	fetchData: (id) => dispatch(fetchData(id))
 });
 
 export const withData = Component => connect(mapStateToProps, mapDispatchToProps)(Component);

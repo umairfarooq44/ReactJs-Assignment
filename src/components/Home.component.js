@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { ListGroup, ListGroupItem,Container } from 'reactstrap';
+import { ListGroup, ListGroupItem,Container ,Button } from 'reactstrap';
 export default (props) => (
     <Container>
     <ListGroup>
@@ -10,6 +10,6 @@ export default (props) => (
         )
       }
     </ListGroup>
-
+    <Button onClick={props.onLoadMore}>Load More</Button>
     </Container>
 )
