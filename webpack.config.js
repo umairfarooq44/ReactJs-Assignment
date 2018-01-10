@@ -20,7 +20,11 @@ var config = {
                 query: {
                     presets: ['react', 'env', 'stage-2']
                 }
-            }
+            },
+            {
+                test: /\.(css|scss)$/,
+                loaders: ['style-loader', 'css-loader', 'sass-loader']
+              },
         ]
     }
 };

@@ -2,12 +2,19 @@ import React from 'react';
 import { render } from 'react-dom';
 import {BrowserRouter, Redirect, Route,Switch} from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Container, Row, Col } from 'reactstrap';
+import promiseMiddleware from 'redux-promise-middleware';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import 'bootstrap/dist/css/bootstrap.css';
+// import thunkMiddleware from 'redux-thunk';
 import DetailPage from "./components/UserDetail.container";
 import  Home  from "./components/Home.container"
 import  reducer  from "./Redux/reducer"
-let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
+let store = createStore(reducer,  composeWithDevTools(
+    applyMiddleware(promiseMiddleware()),
+  ))
 class App extends React.Component {
 
     render() {

@@ -9,19 +9,9 @@ import HomeComponent from './Home.component';
      super(props);
    }
    componentDidMount() {
-     if(!(this.props.data.length>0)){
-     const me = this;
-    fetch('https://api.github.com/users?since=70')
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      me.props.updateData(data)
-    })
-    .catch(function(error) {
-      console.log('Request failed', error)
-    });
-  }
+    if (!(this.props.data.length>0)) {
+      this.props.fetchData()
+    }
    }
   render() {console.log('propss in home', this.props.data)
       if (!(this.props.data.length>0)) {
