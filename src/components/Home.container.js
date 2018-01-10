@@ -18,7 +18,7 @@ import HomeComponent from './Home.component';
      const lastId = this.props.data[this.props.data.length -1 ].id;
     this.props.fetchData(lastId)
    }
-  render() {console.log('propss in home', this.props.data)
+  render() {
       if (!(this.props.data.length>0)) {
        return( <img src="loading.gif" style={ { display: 'block',marginLeft: 'auto',marginRight: 'auto'}} />);
       }

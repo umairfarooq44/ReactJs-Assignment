@@ -6,13 +6,12 @@ import UserDetailComponent from './UserDetail.component';
      constructor(props) {
          super(props);
         
-         console.log('in real constructo',props,this.props)
 
         const {login} = this.props.match.params;
         const data = this.props.data.filter(data => data.login == login);
          this.state = {data: data.length>0?data[0]:''};
      }
-     componentDidMount() {debugger;
+     componentDidMount() {
        if(this.state.data === '') {
         const me = this;
         const {login} = this.props.match.params;

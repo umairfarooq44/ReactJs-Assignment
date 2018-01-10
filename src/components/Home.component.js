@@ -10,6 +10,6 @@ export default (props) => (
         )
       }
     </ListGroup>
-    <Button onClick={props.onLoadMore}>Load More</Button>
+    <Button onClick={props.onLoadMore} style={{margin:'3rem',marginLeft:'50%' }}>Load More</Button>
     </Container>
 )
