@@ -38,7 +38,6 @@ const UserDetailComponent = ({ avatar_url, id, login, html_url }) => (
         </Row>
         <Row>
           <Col md={2}>
-            HomeComponent
             html Url:
           </Col>
           <Col>

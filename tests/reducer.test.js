@@ -13,15 +13,15 @@ describe('store/topics/reducer', () => {
       Reducer(uut).expect({type: 'NOT_EXISTING'}).toReturnState(initialState);
     });
   
-    it('should store fetched topics', () => {
+    it('should store have pending in state', () => {
       const action = {type: FETCH_DATA_PENDING};
       Reducer(uut).expect(action).toReturnState({...initialState, isFetching: true});
     });
-    it('should store fetched topics', () => {
+    it('should store have rejected in state', () => {
       const action = {type: FETCH_DATA_REJECTED};
       Reducer(uut).expect(action).toReturnState({...initialState, isFetching: false, error:true});
     });
-    it('should store fetched topics', () => {
+    it('should store have data in state', () => {
         const data = [{id:1},{id:2}] 
       const action = {type: FETCH_DATA_FULFILLED, payload:data };
       Reducer(uut).expect(action).toReturnState({...initialState, isFetching: false, data},);
