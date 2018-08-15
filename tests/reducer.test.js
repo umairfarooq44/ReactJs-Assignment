@@ -1,6 +1,6 @@
 import { Reducer } from 'redux-testkit';
 import uut from '../src/Redux/reducer';
-import {FETCH_DATA_FULFILLED, FETCH_DATA_PENDING, FETCH_DATA_REJECTED} from '../src/Redux/constants'
+import {LOAD_USERS, LOAD_USERS_ERROR, LOAD_USERS_SUCCESS} from '../src/Redux/constants'
 // import * as actionTypes from '../actionTypes';
 const initialState = {data:[], isFetching:false, error:false};
 describe('store/topics/reducer', () => {
@@ -14,16 +14,16 @@ describe('store/topics/reducer', () => {
     });
   
     it('should store have pending in state', () => {
-      const action = {type: FETCH_DATA_PENDING};
+      const action = {type: LOAD_USERS};
       Reducer(uut).expect(action).toReturnState({...initialState, isFetching: true});
     });
     it('should store have rejected in state', () => {
-      const action = {type: FETCH_DATA_REJECTED};
+      const action = {type: LOAD_USERS_ERROR};
       Reducer(uut).expect(action).toReturnState({...initialState, isFetching: false, error:true});
     });
     it('should store have data in state', () => {
         const data = [{id:1},{id:2}] 
-      const action = {type: FETCH_DATA_FULFILLED, payload:data };
+      const action = {type: LOAD_USERS_SUCCESS, users:data };
       Reducer(uut).expect(action).toReturnState({...initialState, isFetching: false, data},);
     });
   

@@ -7,14 +7,16 @@ class UserDetailContainer extends React.Component {
   constructor(props) {
     super(props);
 
-    const { login } = this.props.match.params;
-    const data = this.props.user.data.filter(data => data.login === login);
+    const { login } = props.match.params;
+    const data = props.user.data.filter(data => data.login === login);
     this.state = { data: data.length > 0 ? data[0] : "" };
   }
   componentDidMount() {
-    if (this.state.data === "") {
+    const {data} = this.state;
+    const {match} = this.props;
+    if (data === "") {
       const me = this;
-      const { login } = this.props.match.params;
+      const { login } = match.params;
       fetch(`https://api.github.com/users/${login}`)
         .then(response => {
           return response.json();
@@ -22,32 +24,40 @@ class UserDetailContainer extends React.Component {
         .then(data => {
           me.setState({ data });
         })
-        .catch(error => {
-          console.log("Request failed", error);
+        .catch(() => {
         });
     }
   }
   render() {
-    if (this.state.data === "") {
+    const {data} = this.state;
+    if (data === "") {
       return (
         <img
           src="../loading.gif"
           style={{ display: "block", marginLeft: "auto", marginRight: "auto" }}
+          alt="loading"
         />
       );
     }
     return (
       <UserDetailComponent
-        login={this.state.data.login}
-        id={this.state.data.id}
-        avatar_url={this.state.data.avatar_url}
-        html_url={this.state.data.html_url}
+        login={data.login}
+        id={data.id}
+        avatar_url={data.avatar_url}
+        html_url={data.html_url}
       />
     );
   }
 }
+
+UserDetailContainer.defaultProps = {
+  user: {},
+  match:{}
+}
+
 UserDetailContainer.propTypes = {
   user: PropTypes.object,
   match: PropTypes.object
 };
+
 export default withData(UserDetailContainer);

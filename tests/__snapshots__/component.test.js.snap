@@ -1,0 +1,419 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <HomeComponent
+    data={
+      Array [
+        Object {
+          "avatar_url": "abc",
+          "id": 1,
+          "login": "abc",
+        },
+        Object {
+          "avatar_url": "abc",
+          "id": 2,
+          "login": "abc",
+        },
+      ]
+    }
+    isLoading={false}
+    onLoadMore={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <ListGroup
+          tag="ul"
+        >
+          <ListGroupItem
+            tag={[Function]}
+            to="user/abc"
+          >
+            <img
+              alt="avatar"
+              height={50}
+              src="abc"
+              width={50}
+            />
+            abc
+          </ListGroupItem>
+          <ListGroupItem
+            tag={[Function]}
+            to="user/abc"
+          >
+            <img
+              alt="avatar"
+              height={50}
+              src="abc"
+              width={50}
+            />
+            abc
+          </ListGroupItem>
+        </ListGroup>,
+        <Button
+          color="secondary"
+          onClick={[Function]}
+          style={
+            Object {
+              "margin": "3rem",
+              "marginLeft": "50%",
+            }
+          }
+          tag="button"
+        >
+          Load More
+        </Button>,
+      ],
+      "tag": "div",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <ListGroupItem
+              tag={[Function]}
+              to="user/abc"
+            >
+              <img
+                alt="avatar"
+                height={50}
+                src="abc"
+                width={50}
+              />
+              abc
+            </ListGroupItem>,
+            <ListGroupItem
+              tag={[Function]}
+              to="user/abc"
+            >
+              <img
+                alt="avatar"
+                height={50}
+                src="abc"
+                width={50}
+              />
+              abc
+            </ListGroupItem>,
+          ],
+          "tag": "ul",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "1abc",
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <img
+                  alt="avatar"
+                  height={50}
+                  src="abc"
+                  width={50}
+                />,
+                "abc",
+              ],
+              "tag": [Function],
+              "to": "user/abc",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "avatar",
+                  "height": 50,
+                  "src": "abc",
+                  "width": 50,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "abc",
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "2abc",
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <img
+                  alt="avatar"
+                  height={50}
+                  src="abc"
+                  width={50}
+                />,
+                "abc",
+              ],
+              "tag": [Function],
+              "to": "user/abc",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "avatar",
+                  "height": 50,
+                  "src": "abc",
+                  "width": 50,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "abc",
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Load More",
+          "color": "secondary",
+          "onClick": [Function],
+          "style": Object {
+            "margin": "3rem",
+            "marginLeft": "50%",
+          },
+          "tag": "button",
+        },
+        "ref": null,
+        "rendered": "Load More",
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <ListGroup
+            tag="ul"
+          >
+            <ListGroupItem
+              tag={[Function]}
+              to="user/abc"
+            >
+              <img
+                alt="avatar"
+                height={50}
+                src="abc"
+                width={50}
+              />
+              abc
+            </ListGroupItem>
+            <ListGroupItem
+              tag={[Function]}
+              to="user/abc"
+            >
+              <img
+                alt="avatar"
+                height={50}
+                src="abc"
+                width={50}
+              />
+              abc
+            </ListGroupItem>
+          </ListGroup>,
+          <Button
+            color="secondary"
+            onClick={[Function]}
+            style={
+              Object {
+                "margin": "3rem",
+                "marginLeft": "50%",
+              }
+            }
+            tag="button"
+          >
+            Load More
+          </Button>,
+        ],
+        "tag": "div",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <ListGroupItem
+                tag={[Function]}
+                to="user/abc"
+              >
+                <img
+                  alt="avatar"
+                  height={50}
+                  src="abc"
+                  width={50}
+                />
+                abc
+              </ListGroupItem>,
+              <ListGroupItem
+                tag={[Function]}
+                to="user/abc"
+              >
+                <img
+                  alt="avatar"
+                  height={50}
+                  src="abc"
+                  width={50}
+                />
+                abc
+              </ListGroupItem>,
+            ],
+            "tag": "ul",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "1abc",
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt="avatar"
+                    height={50}
+                    src="abc"
+                    width={50}
+                  />,
+                  "abc",
+                ],
+                "tag": [Function],
+                "to": "user/abc",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "avatar",
+                    "height": 50,
+                    "src": "abc",
+                    "width": 50,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "abc",
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "2abc",
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt="avatar"
+                    height={50}
+                    src="abc"
+                    width={50}
+                  />,
+                  "abc",
+                ],
+                "tag": [Function],
+                "to": "user/abc",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "avatar",
+                    "height": 50,
+                    "src": "abc",
+                    "width": 50,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "abc",
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Load More",
+            "color": "secondary",
+            "onClick": [Function],
+            "style": Object {
+              "margin": "3rem",
+              "marginLeft": "50%",
+            },
+            "tag": "button",
+          },
+          "ref": null,
+          "rendered": "Load More",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getSnapshotBeforeUpdate": true,
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

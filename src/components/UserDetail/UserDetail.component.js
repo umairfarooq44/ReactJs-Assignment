@@ -18,7 +18,7 @@ const UserDetailComponent = ({ avatar_url, id, login, html_url }) => (
       <CardBody>
         <CardTitle>User details</CardTitle>
       </CardBody>
-      <img width="300" height="300" src={avatar_url} alt="Card image cap" />
+      <img width="300" height="300" src={avatar_url} alt="Card cap" />
       <CardBody>
         <Row>
           <Col md={2}>
@@ -49,6 +49,12 @@ const UserDetailComponent = ({ avatar_url, id, login, html_url }) => (
     <Link to="/"><Button>Go Back</Button></Link>
   </Container>
 );
+UserDetailComponent.defaultProps = {
+  avatar_url: "",
+  login: "",
+  html_url: "",
+  id: 0
+}
 
 UserDetailComponent.propTypes = {
   avatar_url: PropTypes.string,

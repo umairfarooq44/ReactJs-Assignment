@@ -5,7 +5,7 @@ const mapStateToProps = state => ({
 	user: state
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
 	fetchData: (id) => dispatch(fetchData(id))
 });
 

@@ -1,7 +1,7 @@
 import {
-	FETCH_DATA_FULFILLED,
-	FETCH_DATA_PENDING,
-	FETCH_DATA_REJECTED
+	LOAD_USERS,
+	LOAD_USERS_ERROR,
+	LOAD_USERS_SUCCESS
 } from './constants';
 
 
@@ -9,20 +9,20 @@ const initialState = { data: [], isFetching: false, error: false };
 
 export default (state = initialState, action) => {
 	switch (action.type) {
-		case FETCH_DATA_PENDING:{
+		case LOAD_USERS:{
 			return {
 				...state,
 				isFetching: true
 			}
 		}
-		case FETCH_DATA_FULFILLED:{
+		case LOAD_USERS_SUCCESS:{
 			return {
 				...state,
 				isFetching: false,
-				data: state.data.concat(action.payload.data)
+				data: state.data.concat(action.users)
 			}
 		}
-		case FETCH_DATA_REJECTED:{
+		case LOAD_USERS_ERROR:{
 			return {
 				...state,
 				isFetching: false,

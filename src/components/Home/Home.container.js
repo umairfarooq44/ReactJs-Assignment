@@ -11,25 +11,30 @@ import HomeComponent from './Home.component';
    }
    
    componentDidMount() {
-    if (!this.props.user.data.length) {
-      this.props.fetchData(0);
+    const {user, fetchData} = this.props;
+    if (!user.data.length) {
+      fetchData(0);
     }
    }
 
    loadMore() {
-      const lastId = this.props.user.data[this.props.user.data.length -1 ].id;
-      this.props.fetchData(lastId);
+     const {user, fetchData} = this.props;
+      const lastId = user.data[user.data.length -1 ].id;
+      fetchData(lastId);
    }
 
   render() {
     const { user } =this.props
     if (!user.data.length) {
-      return <img src="loading.gif" style={ { display: 'block',marginLeft: 'auto',marginRight: 'auto'}} />;
+      return <img src="loading.gif" alt="loading" style={{ display: 'block',marginLeft: 'auto',marginRight: 'auto'}} />;
     }
     return <HomeComponent data={user.data} onLoadMore={this.loadMore} isLoading={user.isFetching} />;
   }
 }
-
+HomeContainer.defaultProps = {
+  fetchData: () => {},
+  user: {}
+}
 
 HomeContainer.propTypes = {
   fetchData: PropTypes.func,
