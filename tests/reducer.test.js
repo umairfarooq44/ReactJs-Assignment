@@ -1,6 +1,6 @@
 import { Reducer } from 'redux-testkit';
-import uut from '../src/Redux/reducer';
-import {LOAD_USERS, LOAD_USERS_ERROR, LOAD_USERS_SUCCESS} from '../src/Redux/constants'
+import uut from '../src/redux/reducer';
+import {LOAD_USERS, LOAD_USERS_ERROR, LOAD_USERS_SUCCESS} from '../src/redux/constants'
 // import * as actionTypes from '../actionTypes';
 const initialState = {data:[], isFetching:false, error:false};
 describe('store/topics/reducer', () => {

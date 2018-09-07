@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withData } from "../../Redux/withData";
+import { withData } from "../../redux/withData";
 import UserDetailComponent from "./UserDetail.component";
 
 class UserDetailContainer extends React.Component {
@@ -43,8 +43,8 @@ class UserDetailContainer extends React.Component {
       <UserDetailComponent
         login={data.login}
         id={data.id}
-        avatar_url={data.avatar_url}
-        html_url={data.html_url}
+        avatarUrl={data.avatar_url}
+        htmlUrl={data.html_url}
       />
     );
   }

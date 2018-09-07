@@ -12,13 +12,13 @@ import {
   Col
 } from "reactstrap";
 
-const UserDetailComponent = ({ avatar_url, id, login, html_url }) => (
+const UserDetailComponent = ({ avatarUrl, id, login, htmlUrl }) => (
   <Container>
     <Card>
       <CardBody>
         <CardTitle>User details</CardTitle>
       </CardBody>
-      <img width="300" height="300" src={avatar_url} alt="Card cap" />
+      <img width="300" height="300" src={avatarUrl} alt="Card cap" />
       <CardBody>
         <Row>
           <Col md={2}>
@@ -41,7 +41,7 @@ const UserDetailComponent = ({ avatar_url, id, login, html_url }) => (
             html Url:
           </Col>
           <Col>
-            <a href={html_url}>{html_url}</a>
+            <a href={htmlUrl}>{htmlUrl}</a>
           </Col>
         </Row>
       </CardBody>
@@ -50,16 +50,16 @@ const UserDetailComponent = ({ avatar_url, id, login, html_url }) => (
   </Container>
 );
 UserDetailComponent.defaultProps = {
-  avatar_url: "",
+  avatarUrl: "",
   login: "",
-  html_url: "",
+  htmlUrl: "",
   id: 0
 }
 
 UserDetailComponent.propTypes = {
-  avatar_url: PropTypes.string,
+  avatarUrl: PropTypes.string,
   login: PropTypes.string,
-  html_url: PropTypes.string,
+  htmlUrl: PropTypes.string,
   id: PropTypes.number
 };
 

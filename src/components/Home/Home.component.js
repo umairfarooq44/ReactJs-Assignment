@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { ListGroup, ListGroupItem, Container, Button } from 'reactstrap';
+import Loading from '../Loading'
 
 
 const HomeComponent = ({data, isLoading, onLoadMore}) => (
@@ -16,11 +17,11 @@ const HomeComponent = ({data, isLoading, onLoadMore}) => (
               </ListGroupItem>
           )
           )
-        }
+      }
     </ListGroup>
     {
         isLoading ? 
-          <img src="loading.gif" height="100" width="100" alt="loading" style={{margin:'3rem',marginLeft:'50%' }} /> : 
+          <Loading /> : 
           <Button onClick={onLoadMore} style={{margin:'3rem',marginLeft:'50%' }}>Load More</Button>
       }
   </Container>
