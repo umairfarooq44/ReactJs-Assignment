@@ -6,14 +6,14 @@ import UserDetailComponent from "./UserDetail.component";
 class UserDetailContainer extends React.Component {
   constructor(props) {
     super(props);
-
     const { login } = props.match.params;
     const data = props.user.data.filter(data => data.login === login);
     this.state = { data: data.length > 0 ? data[0] : "" };
   }
+
   componentDidMount() {
-    const {data} = this.state;
-    const {match} = this.props;
+    const { data } = this.state;
+    const { match } = this.props;
     if (data === "") {
       const me = this;
       const { login } = match.params;
@@ -28,8 +28,9 @@ class UserDetailContainer extends React.Component {
         });
     }
   }
+  
   render() {
-    const {data} = this.state;
+    const { data } = this.state;
     if (data === "") {
       return (
         <img
