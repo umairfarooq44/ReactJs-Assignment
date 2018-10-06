@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
 import {
   Container,
   Card,
@@ -49,6 +48,7 @@ const UserDetailComponent = ({ avatarUrl, id, login, htmlUrl }) => (
     <Link to="/"><Button>Go Back</Button></Link>
   </Container>
 );
+
 UserDetailComponent.defaultProps = {
   avatarUrl: "",
   login: "",

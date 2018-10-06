@@ -33,7 +33,7 @@ While developing, you will probably rely mostly on `yarn start`; however, there 
 
 |`yarn <script>`    |Description|
 |-------------------|-----------|
-|`start`            |Serves your app at `localhost:3000`|
+|`start`            |Serves your app at `localhost:8080`|
 |`build`            |Builds the application to ./dist|
-|`test`             |Runs unit tests with Karma. See [testing](#testing)|
+|`test`             |Runs unit tests with jest ans enzyme.|
 |`lint`             |[Lints](http://stackoverflow.com/questions/8503559/what-is-linting) the project for potential errors|
