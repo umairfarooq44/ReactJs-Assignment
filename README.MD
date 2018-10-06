@@ -1,11 +1,39 @@
-# ReactJS Assignment
+# React-redux github users
+This repo shows the list of github users developed using react.js, redux, redux-thunk.
 
-## Steps for the completion of tasks
-- First I made dumb components with two routes `/` and `user/:login` with contained dummy list of data with ids.Through routing when clicked on one list item user detail page was opened with dummy login.
-- Then I integrated redux which at that time only contained only id which was updated on the route change.
-- Then I hit the api which was at that executing from componentDidMount function of the component and saving data of api call in the store.
-- Then I designed the user detail page so that after clicking listItem of user, userdetail should be displayed which was getting from the store on the basis of login.
-- Then I updated userDetail page so that if page is reloaded(in which case store would be empty), fetch the single user by executing api.
-- Then I move the api call of home Component to the redux action.
-- Then I implemented load more functionality in Home component.
-- Then I wrote unit tests.
+
+## Requirements
+* node `^6.0.0`
+* yarn `^0.23.0` or npm `^5.6.0`
+
+## Installation
+
+After confirming that your environment meets the above [requirements](#requirements), you can create a new project:
+
+```bash
+$ git clone https://github.com/umairfarooq44/react-redux-githubusers.git 
+$ cd react-redux-githubusers
+```
+
+When that's done, install the project dependencies. It is recommended that you use [Yarn](https://yarnpkg.com/) for deterministic dependency management, but `npm install` will suffice.
+
+```bash
+$ yarn  # Install project dependencies (or `npm install`)
+```
+
+## Running the Project
+
+After completing the [installation](#installation) step, you're ready to start the project!
+
+```bash
+$ yarn start  # Start the development server (or `npm start`)
+```
+
+While developing, you will probably rely mostly on `yarn start`; however, there are additional scripts at your disposal:
+
+|`yarn <script>`    |Description|
+|-------------------|-----------|
+|`start`            |Serves your app at `localhost:3000`|
+|`build`            |Builds the application to ./dist|
+|`test`             |Runs unit tests with Karma. See [testing](#testing)|
+|`lint`             |[Lints](http://stackoverflow.com/questions/8503559/what-is-linting) the project for potential errors|
