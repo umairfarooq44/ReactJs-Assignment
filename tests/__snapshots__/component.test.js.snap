@@ -62,19 +62,13 @@ ShallowWrapper {
             abc
           </ListGroupItem>
         </ListGroup>,
-        <Button
-          color="secondary"
-          onClick={[Function]}
-          style={
-            Object {
-              "margin": "3rem",
-              "marginLeft": "50%",
-            }
-          }
-          tag="button"
-        >
-          Load More
-        </Button>,
+        <styled.div>
+          <Styled(Button)
+            onClick={[Function]}
+          >
+            Load More
+          </Styled(Button)>
+        </styled.div>,
       ],
       "tag": "div",
     },
@@ -197,17 +191,25 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": "Load More",
-          "color": "secondary",
-          "onClick": [Function],
-          "style": Object {
-            "margin": "3rem",
-            "marginLeft": "50%",
-          },
-          "tag": "button",
+          "children": <Styled(Button)
+            onClick={[Function]}
+          >
+            Load More
+          </Styled(Button)>,
         },
         "ref": null,
-        "rendered": "Load More",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Load More",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Load More",
+          "type": [Function],
+        },
         "type": [Function],
       },
     ],
@@ -248,19 +250,13 @@ ShallowWrapper {
               abc
             </ListGroupItem>
           </ListGroup>,
-          <Button
-            color="secondary"
-            onClick={[Function]}
-            style={
-              Object {
-                "margin": "3rem",
-                "marginLeft": "50%",
-              }
-            }
-            tag="button"
-          >
-            Load More
-          </Button>,
+          <styled.div>
+            <Styled(Button)
+              onClick={[Function]}
+            >
+              Load More
+            </Styled(Button)>
+          </styled.div>,
         ],
         "tag": "div",
       },
@@ -383,17 +379,25 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": "Load More",
-            "color": "secondary",
-            "onClick": [Function],
-            "style": Object {
-              "margin": "3rem",
-              "marginLeft": "50%",
-            },
-            "tag": "button",
+            "children": <Styled(Button)
+              onClick={[Function]}
+            >
+              Load More
+            </Styled(Button)>,
           },
           "ref": null,
-          "rendered": "Load More",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Load More",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Load More",
+            "type": [Function],
+          },
           "type": [Function],
         },
       ],
